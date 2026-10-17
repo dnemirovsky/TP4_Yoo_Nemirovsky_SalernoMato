@@ -1,13 +1,12 @@
 SELECT
     m.nombre AS nombre_medico,
-    p.nombre AS nombre_paciente,
-    COUNT(c.id_consulta) AS cantidad_consultas,
+    COUNT(v.id_paciente) AS cantidad_consultas_menores,
     CASE
-        WHEN m.especialidad_id = 1 THEN 'TRUE'
-        ELSE 'FALSE'
+        WHEN m.especialidad_id = 1 THEN TRUE
+        ELSE FALSE
     END AS es_pediatra
 FROM medicos m
-JOIN consultas c ON c.id_medico = m.id_medico
-JOIN pacientes p ON p.id_paciente = c.id_paciente
-WHERE p.edad < 18
-GROUP BY m.nombre, p.nombre, m.especialidad_id;
+LEFT JOIN consultas c ON c.id_medico = m.id_medico
+LEFT JOIN vista_pacientes_con_edad v ON v.id_paciente = c.id_paciente
+                                    AND v.edad < 18
+GROUP BY m.id_medico, m.nombre, m.especialidad_id;
