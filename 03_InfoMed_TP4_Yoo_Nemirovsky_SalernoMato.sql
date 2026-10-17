@@ -1,3 +1,3 @@
-SELECT nombre, edad
-FROM pacientes
+SELECT nombre_paciente, edad
+FROM vista_pacientes_con_edad
 WHERE edad<18;

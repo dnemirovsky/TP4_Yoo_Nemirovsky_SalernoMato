@@ -1,4 +1,3 @@
-SELECT nombre, calle, número, ciudad
+SELECT nombre, calle, numero, ciudad
 FROM pacientes
-WHERE ciudad ILIKE '%buenos aires%'
-   OR ciudad ILIKE '%bs%aires%';
+WHERE ciudad ILIKE '%B%A___s%';
