@@ -1,0 +1,3 @@
+SELECT *
+FROM consultas
+WHERE id_medico=3 AND EXTRACT (MONTH FROM fecha)=8 AND EXTRACT(YEAR FROM c.fecha) = 2024; 

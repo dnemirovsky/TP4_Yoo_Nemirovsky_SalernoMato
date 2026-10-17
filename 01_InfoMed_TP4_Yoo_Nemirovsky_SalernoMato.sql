@@ -1,0 +1,1 @@
+CREATE index idx_ciudad ON pacientes(ciudad)
