@@ -41,7 +41,7 @@ En base a la descripción del caso propuesto, se trata de una base de datos rela
 
 Para visualizar la estructura de la base de datos, se plantea el modelo conceptual y se construye el diagrama entidad-relación correspondiente, utilizando la notación de Chen (Figura 1). En este diagrama, las entidades fuertes se representan con un rectángulo simple y las entidades débiles, que no pueden identificarse únicamente con sus propios atributos, con un rectángulo doble. Las relaciones se representan con rombos, y se utiliza un rombo doble para la relación identificadora de una entidad débil, es decir, aquella que la vincula con la entidad de la cual depende para ser identificada. La participación total se indica con una doble línea entre la entidad y la relación, y la participación parcial con una línea simple. Las claves primarias se subrayan con una línea continua y las claves parciales con una línea punteada. Por último, se indica la cardinalidad de cada relación (1:1, 1:N o M:N), colocando junto a cada entidad el número de instancias que pueden participar en ella.
 
-![Figura 1](imagenes/diagrama_chen.png)
+![Figura 1](Imagenes/diagrama_chen.png)
 
 *Figura 1: Diagrama entidad-relación de la base de datos dada usando la notación de Chen. Para poder visualizarlo mejor ingresar al siguiente [link](https://www.canva.com/design/DAHYVcNP86k/UNnCDZEurgQh0hz9h3akYw/edit).*
 
@@ -65,7 +65,7 @@ Al analizar las relaciones, se destacan las siguientes reglas o características
 
 ### 1.1.3 Modelo Relacional
 
-![Figura 2](imagenes/modelo_relacional.png)
+![Figura 2](Imagenes/modelo_relacional.png)
 
 *Figura 2: Modelo relacional de la base de datos dada usando notación Crow's foot.*
 
@@ -159,7 +159,7 @@ CREATE INDEX idx_ciudad ON pacientes(ciudad);
 
 No obstante, dado que esta base de datos es pequeña no se puede evidenciar el cambio en la velocidad de respuesta. Ahora bien, si se estuviera trabajando con una mayor cantidad de datos, el cambio entre implementar y no implementar un índice sí sería notorio.
 
-![Figura 3](imagenes/01_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 3](Imagenes/01_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 3: Resultado de la query 1.*
 
@@ -181,10 +181,10 @@ FROM Pacientes p
 LEFT JOIN SexoBiologico sb ON p.id_sexo = sb.id_sexo;
 ```
 
-![Figura 4](imagenes/02_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 5](imagenes/02_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 6](imagenes/02_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 7](imagenes/02_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 4](Imagenes/02_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 5](Imagenes/02_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 6](Imagenes/02_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 7](Imagenes/02_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 4, 5, 6 y 7: Resultado de la query 2.*
 
@@ -196,7 +196,7 @@ FROM vista_pacientes_con_edad
 WHERE edad < 18;
 ```
 
-![Figura 8](imagenes/03_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 8](Imagenes/03_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 8: Resultado de la query 3.*
 
@@ -210,7 +210,7 @@ WHERE nombre = 'Luciana Gómez'
   AND numero = '121'
   AND ciudad = 'Buenos Aires';
 ```
-![Figura 9](imagenes/04_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 9](Imagenes/04_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 9: Resultado de la query 4.*
 
@@ -234,7 +234,7 @@ WHERE ciudad ILIKE '%B%A___s%';
 - Se usa `%` para indicar que contiene la palabra B y A___s.
 - Se usa `_` para indicar la cantidad de caracteres. Pero debe empezar con A y terminar con s.
 
-![Figura 10](imagenes/05_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 10](Imagenes/05_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 10: Resultado de la query 5.*
 
@@ -267,7 +267,7 @@ UPDATE pacientes
 SET ciudad = 'Mendoza'
 WHERE ciudad ILIKE '%Me____a%';
 ```
-![Figura 11](imagenes/06_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 11](Imagenes/06_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 11: Resultado de la query 6.*
 
@@ -286,7 +286,7 @@ ORDER BY p.ciudad, sb.descripcion;
 
 Previo a realizar esta query, corregimos el campo ciudad para agrupar las ciudades de manera correcta. Caso contrario, aparecían agrupaciones de ciudades dos veces.
 
-![Figura 12](imagenes/07_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 12](Imagenes/07_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 12: Resultado de la query 7.*
 
@@ -300,7 +300,7 @@ WHERE id_medico = 3
   AND EXTRACT(YEAR FROM fecha) = 2024;
 ```
 
-![Figura 13](imagenes/08_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 13](Imagenes/08_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 13: Resultado de la query 8.*
 
@@ -317,10 +317,10 @@ ORDER BY cantidad_recetas DESC;
 Se usa `LEFT JOIN` para traer todos los médicos aunque no hayan emitido recetas.
 
 
-![Figura 14](imagenes/09_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 15](imagenes/09_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 16](imagenes/09_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 17](imagenes/09_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 14](Imagenes/09_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 15](Imagenes/09_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 16](Imagenes/09_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 17](Imagenes/09_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 14, 15, 16 y 17: Resultado de la query 9.*
 
@@ -334,12 +334,12 @@ WHERE EXTRACT(MONTH FROM c.fecha) = 8
   AND EXTRACT(YEAR FROM c.fecha) = 2024;
 ```
 
-![Figura 18](imagenes/10_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 19](imagenes/10_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 20](imagenes/10_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 21](imagenes/10_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 22](imagenes/10_5_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 23](imagenes/10_6_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 18](Imagenes/10_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 19](Imagenes/10_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 20](Imagenes/10_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 21](Imagenes/10_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 22](Imagenes/10_5_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 23](Imagenes/10_6_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 18, 19, 20, 21, 22 y 23: Resultado de la query 10.*
 
@@ -353,7 +353,7 @@ WHERE r.id_medico = 2
 GROUP BY m.id_medicamento, m.nombre
 HAVING COUNT(r.id_medicamento) > 1;
 ```
-![Figura 24](imagenes/11_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 24](Imagenes/11_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 24: Resultado de la query 11.*
 
@@ -366,12 +366,12 @@ LEFT JOIN recetas r ON p.id_paciente = r.id_paciente
 GROUP BY p.id_paciente, p.nombre;
 ```
 
-![Figura 25](imagenes/12_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 26](imagenes/12_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 27](imagenes/12_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 28](imagenes/12_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 29](imagenes/12_5_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 30](imagenes/12_6_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 25](Imagenes/12_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 26](Imagenes/12_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 27](Imagenes/12_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 28](Imagenes/12_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 29](Imagenes/12_5_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 30](Imagenes/12_6_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 25, 26, 27, 28, 29 y 30: Resultado de la query 12.*
 
@@ -387,7 +387,7 @@ HAVING COUNT(m.id_medico) > 2;
 
 En este caso no usamos `LEFT JOIN` porque luego en el `HAVING` filtramos por aquellos que sí tienen médicos. En caso de haber utilizado `LEFT JOIN`, primero se traerían todas las especialidades, incluso las que no tienen médicos, y luego filtraríamos por aquellas que sí. Por ende, es más eficiente usar `INNER JOIN` desde el principio.
 
-![Figura 31](imagenes/13_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 31](Imagenes/13_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 31: Resultado de la query 13.*
 
@@ -399,9 +399,9 @@ FROM vista_pacientes_con_edad
 WHERE edad > (SELECT AVG(edad) FROM vista_pacientes_con_edad)
 ORDER BY edad DESC;
 ```
-![Figura 32](imagenes/14_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 33](imagenes/14_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 34](imagenes/14_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 32](Imagenes/14_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 33](Imagenes/14_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 34](Imagenes/14_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 32, 33 y 34: Resultado de la query 14.*
 
@@ -415,7 +415,7 @@ GROUP BY m.nombre, m.id_medicamento
 ORDER BY cantidad_recetas DESC
 LIMIT 2;
 ```
-![Figura 35](imagenes/15_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 35](Imagenes/15_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 35: Resultado de la query 15.*
 
@@ -434,9 +434,9 @@ INNER JOIN consultas c ON c.id_paciente = u.id_paciente
                       AND c.fecha = u.ultima_fecha;
 ```
 
-![Figura 36](imagenes/16_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 37](imagenes/16_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 38](imagenes/16_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 36](Imagenes/16_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 37](Imagenes/16_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 38](Imagenes/16_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 36, 37 y 38: Resultado de la query 16.*
 
@@ -454,17 +454,17 @@ GROUP BY m.id_medico, p.id_paciente, m.nombre, p.nombre
 ORDER BY m.nombre, p.nombre;
 ```
 
-![Figura 39](imagenes/17_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 41](imagenes/17_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 42](imagenes/17_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 43](imagenes/17_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 44](imagenes/17_5_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 45](imagenes/17_6_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 46](imagenes/17_7_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 47](imagenes/17_8_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 48](imagenes/17_9_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 49](imagenes/17_10_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 50](imagenes/17_11_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 39](Imagenes/17_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 41](Imagenes/17_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 42](Imagenes/17_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 43](Imagenes/17_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 44](Imagenes/17_5_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 45](Imagenes/17_6_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 46](Imagenes/17_7_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 47](Imagenes/17_8_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 48](Imagenes/17_9_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 49](Imagenes/17_10_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 50](Imagenes/17_11_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 y 50: Resultado de la query 17.*
 
@@ -488,11 +488,11 @@ INNER JOIN medicos me ON me.id_medico = r.id_medico
 INNER JOIN pacientes p ON p.id_paciente = r.id_paciente
 ORDER BY t.total_recetas DESC, m.nombre;
 ```
-![Figura 51](imagenes/18_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 52](imagenes/18_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 53](imagenes/18_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 54](imagenes/18_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 55](imagenes/18_5_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 51](Imagenes/18_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 52](Imagenes/18_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 53](Imagenes/18_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 54](Imagenes/18_4_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 55](Imagenes/18_5_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 51, 52, 53, 54 y 55: Resultado de la query 18.*
 
@@ -507,9 +507,9 @@ GROUP BY m.id_medico, m.nombre
 ORDER BY cantidad_pacientes DESC;
 ```
 
-![Figura 56](imagenes/19_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 57](imagenes/19_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 58](imagenes/19_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 56](Imagenes/19_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 57](Imagenes/19_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 58](Imagenes/19_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 56, 57 y 58: Resultado de la query 19.*
 
@@ -531,8 +531,8 @@ GROUP BY m.id_medico, m.nombre, m.especialidad_id;
 ```
 
 
-![Figura 59](imagenes/20_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 60](imagenes/20_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
-![Figura 61](imagenes/20_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 59](Imagenes/20_1_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 60](Imagenes/20_2_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
+![Figura 61](Imagenes/20_3_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figuras 59, 60 y 61: Resultado de la query 20.*
