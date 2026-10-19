@@ -210,6 +210,16 @@ WHERE nombre = 'Luciana Gómez'
   AND numero = '121'
   AND ciudad = 'Buenos Aires';
 ```
+Nota: La actualización fue realizada posteriormente a normalizar el campo ciudad. Luego de actualizar, se realizó una búsqueda para visualizar el registro de esta paciente. 
+
+```sql
+SELECT *
+FROM pacientes
+WHERE nombre = 'Luciana Gómez'
+   AND calle='Calle Corrientes'
+   AND numero= '500'
+   AND ciudad = 'Buenos Aires';
+```
 ![Figura 9](Imagenes/04_InfoMed_TP4_Yoo_Nemirovsky_SalernoMato.png)
 
 *Figura 9: Resultado de la query 4.*
